@@ -10,6 +10,9 @@ public class Game1 : Game
     private SpriteBatch _spriteBatch;
     int win_width = 900;
     int win_height = 600;
+    Texture2D targetSprite;
+    Texture2D crosshairsSprite;
+    Texture2D backgroundSprite;
 
     public Game1()
     {
@@ -24,7 +27,7 @@ public class Game1 : Game
     protected override void Initialize()
     {
         // TODO: Add your initialization logic here
-        Window.Title = "Mono Snake"; // Set the title of the window
+        Window.Title = "Target Game"; // Set the title of the window
         base.Initialize();
         
     }
@@ -34,6 +37,9 @@ public class Game1 : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         // TODO: use this.Content to load your game content here
+        targetSprite = Content.Load<Texture2D>("target");
+        crosshairsSprite = Content.Load<Texture2D>("crosshairs");
+        backgroundSprite = Content.Load<Texture2D>("sky");
     }
 
     protected override void Update(GameTime gameTime)
@@ -48,9 +54,13 @@ public class Game1 : Game
 
     protected override void Draw(GameTime gameTime)
     {
-        //GraphicsDevice.Clear(Color.);
-        var bg_color = new Color(18, 53, 36);
-        GraphicsDevice.Clear(bg_color); // Phthalo Green color
+        //GraphicsDevice.Clear(new Color(18, 53, 36));
+        _spriteBatch.Begin();
+        GraphicsDevice.Clear(new Color(18, 53, 36));
+        _spriteBatch.Draw(targetSprite, new Vector2(0, 0), Color.White);
+        _spriteBatch.End();
+        //var bg_color = new Color(18, 53, 36);
+        //GraphicsDevice.Clear(bg_color); // Phthalo Green color
         base.Draw(gameTime);
     }
 }

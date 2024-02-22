@@ -24,3 +24,7 @@ C:\Code\MonoGame\learning_one\obj\Debug\net6.0\refint\learning_one.dll
 C:\Code\MonoGame\learning_one\obj\Debug\net6.0\learning_one.pdb
 C:\Code\MonoGame\learning_one\obj\Debug\net6.0\learning_one.genruntimeconfig.cache
 C:\Code\MonoGame\learning_one\obj\Debug\net6.0\ref\learning_one.dll
+C:\Code\MonoGame\learning_one\bin\Debug\net6.0\Content\crosshairs.xnb
+C:\Code\MonoGame\learning_one\bin\Debug\net6.0\Content\galleryFont.xnb
+C:\Code\MonoGame\learning_one\bin\Debug\net6.0\Content\sky.xnb
+C:\Code\MonoGame\learning_one\bin\Debug\net6.0\Content\target.xnb
