@@ -1,18 +1,22 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
+using System;
+using System.Security.Cryptography.X509Certificates;
 namespace learning_one;
 
 public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-    int win_width = 900;
-    int win_height = 600;
+    int win_width = 1200;
+    int win_height = 800;
     Texture2D targetSprite;
     Texture2D crosshairsSprite;
     Texture2D backgroundSprite;
+    SpriteFont gameFont;
+    Vector2 targetPosition = new Vector2(600, 400);
+    MouseState mouseState;
 
     public Game1()
     {
@@ -40,6 +44,7 @@ public class Game1 : Game
         targetSprite = Content.Load<Texture2D>("target");
         crosshairsSprite = Content.Load<Texture2D>("crosshairs");
         backgroundSprite = Content.Load<Texture2D>("sky");
+        gameFont = Content.Load<SpriteFont>("galleryFont");
     }
 
     protected override void Update(GameTime gameTime)
@@ -48,19 +53,38 @@ public class Game1 : Game
             Exit();
 
         // TODO: Add your update logic here
-
+        mouseState = Mouse.GetState();
+        float mx = mouseState.X;
+        float my = mouseState.Y;
+        float tr = targetSprite.Width / 2;
+        float tx = targetPosition.X + tr / 2;
+        float ty = targetPosition.Y + tr / 2;
+        if(_hovering_target(mx, my, tx, ty, tr))
+        {
+            var random = new Random();
+            float x = random.Next(0, win_width - (int)tr);
+            float y = random.Next(0, win_height - (int)tr);
+            targetPosition.X = x;
+            targetPosition.Y = y;
+        }
         base.Update(gameTime);
+    }
+
+    public bool _hovering_target(float mx, float my, float tx, float ty, float tr)
+    {
+        float distanceSquared = (mx - tx) * (mx - tx) + (my - ty) * (my - ty);
+        float radiusSquared = tr * tr;
+
+        return distanceSquared <= radiusSquared;
     }
 
     protected override void Draw(GameTime gameTime)
     {
-        //GraphicsDevice.Clear(new Color(18, 53, 36));
         _spriteBatch.Begin();
-        GraphicsDevice.Clear(new Color(18, 53, 36));
-        _spriteBatch.Draw(targetSprite, new Vector2(0, 0), Color.White);
+        _spriteBatch.Draw(backgroundSprite, new Vector2(0, 0), Color.White);
+        _spriteBatch.DrawString(gameFont, "Hover over the target", new Vector2(win_width / 2 - gameFont.MeasureString("Click The Target").X / 2, 20), Color.Black);
+        _spriteBatch.Draw(targetSprite, new Vector2(targetPosition.X, targetPosition.Y), Color.White);
         _spriteBatch.End();
-        //var bg_color = new Color(18, 53, 36);
-        //GraphicsDevice.Clear(bg_color); // Phthalo Green color
         base.Draw(gameTime);
     }
 }
