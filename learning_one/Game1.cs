@@ -59,11 +59,12 @@ public class Game1 : Game
         float tr = targetSprite.Width / 2;
         float tx = targetPosition.X + tr / 2;
         float ty = targetPosition.Y + tr / 2;
-        if(_hovering_target(mx, my, tx, ty, tr))
+        if(_hovering_target(mx, my, tx, ty, tr) && mouseState.LeftButton == ButtonState.Pressed)
         {
             var random = new Random();
             float x = random.Next(0, win_width - (int)tr);
             float y = random.Next(0, win_height - (int)tr);
+            //Console.WriteLine(mouseState.LeftButton == ButtonState.Pressed);
             targetPosition.X = x;
             targetPosition.Y = y;
         }
