@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Security.Cryptography.X509Certificates;
 namespace learning_one;
@@ -21,6 +23,7 @@ public class Game1 : Game
     SpriteFont gameFont;
     Vector2 targetPosition = new Vector2(600, 400);
     MouseState mouseState;
+    Song explosionSong;
 
     public Game1()
     {
@@ -49,6 +52,7 @@ public class Game1 : Game
         crosshairsSprite = Content.Load<Texture2D>("crosshairs");
         backgroundSprite = Content.Load<Texture2D>("sky");
         gameFont = Content.Load<SpriteFont>("galleryFont");
+        explosionSong = Content.Load<Song>("explosion");
     }
 
     protected override void Update(GameTime gameTime)
@@ -68,6 +72,7 @@ public class Game1 : Game
             drawCrosshairs = true;
             crosshairsPos[0] = mx;
             crosshairsPos[1] = my;
+            MediaPlayer.Play(explosionSong);
         }
         base.Update(gameTime);
     }
@@ -92,7 +97,7 @@ public class Game1 : Game
     {
         _spriteBatch.Begin();
         _spriteBatch.Draw(backgroundSprite, new Vector2(0, 0), Color.White);
-        _spriteBatch.DrawString(gameFont, "Hover over the target", new Vector2(win_width / 2 - gameFont.MeasureString("Click The Target").X / 2, 20), Color.Black);
+        _spriteBatch.DrawString(gameFont, "Click The Target", new Vector2(win_width / 2 - gameFont.MeasureString("Click The Target").X / 2, 20), Color.Black);
         _spriteBatch.Draw(targetSprite, new Vector2(targetPosition.X, targetPosition.Y), Color.White);
         if(drawCrosshairs)
         {

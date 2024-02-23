@@ -28,3 +28,5 @@ C:\Code\MonoGame\learning_one\bin\Debug\net6.0\Content\crosshairs.xnb
 C:\Code\MonoGame\learning_one\bin\Debug\net6.0\Content\galleryFont.xnb
 C:\Code\MonoGame\learning_one\bin\Debug\net6.0\Content\sky.xnb
 C:\Code\MonoGame\learning_one\bin\Debug\net6.0\Content\target.xnb
+c:\Code\MonoGame\learning_one\bin\Debug\net6.0\Content\explosion.ogg
+c:\Code\MonoGame\learning_one\bin\Debug\net6.0\Content\explosion.xnb

@@ -1,5 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"c:/Code/MonoGame/learning_one/Content/crosshairs.png","c:/Code/MonoGame/learning_one/Content/bin/DesktopGL/crosshairs.xnb","TextureProcessor","Texture2DContent",1892,10085,0,1546625
-"c:/Code/MonoGame/learning_one/Content/galleryFont.spritefont","c:/Code/MonoGame/learning_one/Content/bin/DesktopGL/galleryFont.xnb","FontDescriptionProcessor","SpriteFontContent",2065,70687,0,1161781
-"c:/Code/MonoGame/learning_one/Content/sky.png","c:/Code/MonoGame/learning_one/Content/bin/DesktopGL/sky.xnb","TextureProcessor","Texture2DContent",1079607,9216085,0,2535315
-"c:/Code/MonoGame/learning_one/Content/target.png","c:/Code/MonoGame/learning_one/Content/bin/DesktopGL/target.xnb","TextureProcessor","Texture2DContent",3395,32485,0,0161831
+"c:/Code/MonoGame/learning_one/Content/explosion.mp3","c:/Code/MonoGame/learning_one/Content/bin/DesktopGL/explosion.xnb","SongProcessor","SongContent",32929,127,0,5316147
