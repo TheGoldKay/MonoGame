@@ -13,6 +13,10 @@ public class Game1 : Game
     int win_height = 800;
     Texture2D targetSprite;
     Texture2D crosshairsSprite;
+    double crosshairsTimer = 1.0;
+    double crosshairsClock = 0.0;
+    bool drawCrosshairs = false;
+    float[] crosshairsPos = new float[2];
     Texture2D backgroundSprite;
     SpriteFont gameFont;
     Vector2 targetPosition = new Vector2(600, 400);
@@ -61,16 +65,21 @@ public class Game1 : Game
         float ty = targetPosition.Y + tr / 2;
         if(_hovering_target(mx, my, tx, ty, tr) && mouseState.LeftButton == ButtonState.Pressed)
         {
-            var random = new Random();
-            float x = random.Next(0, win_width - (int)tr);
-            float y = random.Next(0, win_height - (int)tr);
-            //Console.WriteLine(mouseState.LeftButton == ButtonState.Pressed);
-            targetPosition.X = x;
-            targetPosition.Y = y;
+            drawCrosshairs = true;
+            crosshairsPos[0] = mx;
+            crosshairsPos[1] = my;
         }
         base.Update(gameTime);
     }
 
+    public void _change_target(float tr)
+    {
+            var random = new Random();
+            float x = random.Next(0, win_width - (int)tr);
+            float y = random.Next(0, win_height - (int)tr);
+            targetPosition.X = x;
+            targetPosition.Y = y;
+    }
     public bool _hovering_target(float mx, float my, float tx, float ty, float tr)
     {
         float distanceSquared = (mx - tx) * (mx - tx) + (my - ty) * (my - ty);
@@ -85,6 +94,18 @@ public class Game1 : Game
         _spriteBatch.Draw(backgroundSprite, new Vector2(0, 0), Color.White);
         _spriteBatch.DrawString(gameFont, "Hover over the target", new Vector2(win_width / 2 - gameFont.MeasureString("Click The Target").X / 2, 20), Color.Black);
         _spriteBatch.Draw(targetSprite, new Vector2(targetPosition.X, targetPosition.Y), Color.White);
+        if(drawCrosshairs)
+        {
+            _spriteBatch.Draw(crosshairsSprite, new Vector2(crosshairsPos[0] - 20, crosshairsPos[1] - 20), Color.White);
+            crosshairsClock += gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
+
+        }
+        if(crosshairsClock >= crosshairsTimer)
+        {
+            crosshairsClock = 0.0;
+            drawCrosshairs = false;
+            _change_target(targetSprite.Width / 2);
+        }
         _spriteBatch.End();
         base.Draw(gameTime);
     }
