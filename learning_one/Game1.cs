@@ -15,7 +15,7 @@ public class Game1 : Game
     int win_height = 800;
     Texture2D targetSprite;
     Texture2D crosshairsSprite;
-    double crosshairsTimer = 1.0;
+    double crosshairsTimer = 0.5;
     double crosshairsClock = 0.0;
     bool drawCrosshairs = false;
     float[] crosshairsPos = new float[2];
@@ -75,6 +75,12 @@ public class Game1 : Game
             MediaPlayer.Play(explosionSong);
         }
         base.Update(gameTime);
+        if(crosshairsClock >= crosshairsTimer)
+        {
+            crosshairsClock = 0.0;
+            drawCrosshairs = false;
+            _change_target(targetSprite.Width / 2);
+        }
     }
 
     public void _change_target(float tr)
@@ -104,12 +110,6 @@ public class Game1 : Game
             _spriteBatch.Draw(crosshairsSprite, new Vector2(crosshairsPos[0] - 20, crosshairsPos[1] - 20), Color.White);
             crosshairsClock += gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
 
-        }
-        if(crosshairsClock >= crosshairsTimer)
-        {
-            crosshairsClock = 0.0;
-            drawCrosshairs = false;
-            _change_target(targetSprite.Width / 2);
         }
         _spriteBatch.End();
         base.Draw(gameTime);

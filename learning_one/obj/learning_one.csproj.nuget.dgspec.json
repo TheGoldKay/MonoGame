@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Code\\MonoGame\\learning_one\\learning_one.csproj": {}
+    "C:\\Code\\MonoGame\\learning_one\\learning_one.csproj": {}
   },
   "projects": {
-    "c:\\Code\\MonoGame\\learning_one\\learning_one.csproj": {
+    "C:\\Code\\MonoGame\\learning_one\\learning_one.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Code\\MonoGame\\learning_one\\learning_one.csproj",
+        "projectUniqueName": "C:\\Code\\MonoGame\\learning_one\\learning_one.csproj",
         "projectName": "learning_one",
-        "projectPath": "c:\\Code\\MonoGame\\learning_one\\learning_one.csproj",
+        "projectPath": "C:\\Code\\MonoGame\\learning_one\\learning_one.csproj",
         "packagesPath": "C:\\Users\\jhonn\\.nuget\\packages\\",
-        "outputPath": "c:\\Code\\MonoGame\\learning_one\\obj\\",
+        "outputPath": "C:\\Code\\MonoGame\\learning_one\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jhonn\\AppData\\Roaming\\NuGet\\NuGet.Config",

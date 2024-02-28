@@ -4,11 +4,11 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>c:/Code/MonoGame/learning_one/Content/crosshairs.png</File>
-    <File>c:/Code/MonoGame/learning_one/Content/explosion.mp3</File>
-    <File>c:/Code/MonoGame/learning_one/Content/galleryFont.spritefont</File>
-    <File>c:/Code/MonoGame/learning_one/Content/sky.png</File>
-    <File>c:/Code/MonoGame/learning_one/Content/target.png</File>
+    <File>C:/Code/MonoGame/learning_one/Content/crosshairs.png</File>
+    <File>C:/Code/MonoGame/learning_one/Content/explosion.mp3</File>
+    <File>C:/Code/MonoGame/learning_one/Content/galleryFont.spritefont</File>
+    <File>C:/Code/MonoGame/learning_one/Content/sky.png</File>
+    <File>C:/Code/MonoGame/learning_one/Content/target.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
