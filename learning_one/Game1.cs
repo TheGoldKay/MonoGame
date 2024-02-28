@@ -7,6 +7,22 @@ using System;
 using System.Security.Cryptography.X509Certificates;
 namespace learning_one;
 
+
+class Circle
+{
+    public Vector2 Center { get; set; }
+    public float Radius { get; set; }
+
+    public bool Intersects(Circle otherCircle)
+    {
+        // Calculate the distance between the centers of the circles
+        float distance = Vector2.Distance(Center, otherCircle.Center);
+
+        // If the distance is less than or equal to the sum of the radii, there is a collision
+        return distance <= (Radius + otherCircle.Radius);
+    }
+}
+
 public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
@@ -24,6 +40,8 @@ public class Game1 : Game
     Vector2 targetPosition = new Vector2(600, 400);
     MouseState mouseState;
     Song explosionSong;
+    Circle circleTarget;
+    Circle circleMouse;
 
     public Game1()
     {
@@ -53,6 +71,9 @@ public class Game1 : Game
         backgroundSprite = Content.Load<Texture2D>("sky");
         gameFont = Content.Load<SpriteFont>("galleryFont");
         explosionSong = Content.Load<Song>("explosion");
+        circleTarget = new Circle { Center = new Vector2(targetPosition.X + targetSprite.Width / 2, targetPosition.Y + targetSprite.Height / 2), Radius = targetSprite.Width / 2 };
+        mouseState = Mouse.GetState();
+        circleMouse = new Circle { Center = new Vector2(mouseState.X, mouseState.Y), Radius = 10 };
     }
 
     protected override void Update(GameTime gameTime)
@@ -62,25 +83,27 @@ public class Game1 : Game
 
         // TODO: Add your update logic here
         mouseState = Mouse.GetState();
+        circleMouse.Center = new Vector2(mouseState.X, mouseState.Y);
         float mx = mouseState.X;
         float my = mouseState.Y;
         float tr = targetSprite.Width / 2;
         float tx = targetPosition.X + tr / 2;
         float ty = targetPosition.Y + tr / 2;
-        if(_hovering_target(mx, my, tx, ty, tr) && mouseState.LeftButton == ButtonState.Pressed)
+        circleTarget.Center = new Vector2(tx, ty);
+        if(circleTarget.Intersects(circleMouse) && mouseState.LeftButton == ButtonState.Pressed)
         {
             drawCrosshairs = true;
             crosshairsPos[0] = mx;
             crosshairsPos[1] = my;
             MediaPlayer.Play(explosionSong);
         }
-        base.Update(gameTime);
         if(crosshairsClock >= crosshairsTimer)
         {
             crosshairsClock = 0.0;
             drawCrosshairs = false;
             _change_target(targetSprite.Width / 2);
         }
+        base.Update(gameTime);
     }
 
     public void _change_target(float tr)
@@ -91,12 +114,14 @@ public class Game1 : Game
             targetPosition.X = x;
             targetPosition.Y = y;
     }
-    public bool _hovering_target(float mx, float my, float tx, float ty, float tr)
+    public bool _hovering_target(double mx, double my, double tx, double ty, double tr)
     {
-        float distanceSquared = (mx - tx) * (mx - tx) + (my - ty) * (my - ty);
-        float radiusSquared = tr * tr;
+        //float distanceSquared = (mx - tx) * (mx - tx) + (my - ty) * (my - ty);
+        //float radiusSquared = tr * tr;
 
-        return distanceSquared <= radiusSquared;
+        //return distanceSquared <= radiusSquared;
+        double dist = Math.Sqrt(Math.Pow(mx - tx, 2) + Math.Pow(my - ty, 2));
+        return dist <= tr;
     }
 
     protected override void Draw(GameTime gameTime)
