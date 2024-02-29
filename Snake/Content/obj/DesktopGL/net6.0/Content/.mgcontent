@@ -11,8 +11,10 @@
     <File>C:/Code/MonoGame/Snake/Content/new_rect_2.png</File>
     <File>C:/Code/MonoGame/Snake/Content/right_borders_2.png</File>
     <File>C:/Code/MonoGame/Snake/Content/right_borders.png</File>
+    <File>C:/Code/MonoGame/Snake/Content/snake_part.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
