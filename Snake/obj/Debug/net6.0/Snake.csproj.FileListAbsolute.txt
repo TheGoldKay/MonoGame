@@ -26,3 +26,8 @@ C:\Code\MonoGame\Snake\obj\Debug\net6.0\Snake.genruntimeconfig.cache
 C:\Code\MonoGame\Snake\obj\Debug\net6.0\ref\Snake.dll
 C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\Arial.xnb
 C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\gamefont.xnb
+C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\Drawing.xnb
+C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\borders_rect.xnb
+C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\right_borders.xnb
+C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\right_borders_2.xnb
+C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\new_rect_2.xnb

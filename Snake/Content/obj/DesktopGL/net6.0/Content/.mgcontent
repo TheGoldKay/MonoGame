@@ -5,9 +5,19 @@
   <Config />
   <SourceFiles>
     <File>C:/Code/MonoGame/Snake/Content/Arial.spritefont</File>
+    <File>C:/Code/MonoGame/Snake/Content/borders_rect.png</File>
+    <File>C:/Code/MonoGame/Snake/Content/Drawing.png</File>
     <File>C:/Code/MonoGame/Snake/Content/gamefont.spritefont</File>
+    <File>C:/Code/MonoGame/Snake/Content/new_rect_2.png</File>
+    <File>C:/Code/MonoGame/Snake/Content/right_borders_2.png</File>
+    <File>C:/Code/MonoGame/Snake/Content/right_borders.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
