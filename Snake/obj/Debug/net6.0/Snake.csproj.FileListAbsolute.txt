@@ -24,3 +24,5 @@ C:\Code\MonoGame\Snake\obj\Debug\net6.0\refint\Snake.dll
 C:\Code\MonoGame\Snake\obj\Debug\net6.0\Snake.pdb
 C:\Code\MonoGame\Snake\obj\Debug\net6.0\Snake.genruntimeconfig.cache
 C:\Code\MonoGame\Snake\obj\Debug\net6.0\ref\Snake.dll
+C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\Arial.xnb
+C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\gamefont.xnb

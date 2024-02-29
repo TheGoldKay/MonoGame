@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Code/MonoGame/Snake/Content/Arial.spritefont","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/Arial.xnb","FontDescriptionProcessor","SpriteFontContent",2008,21535,0,2044681
+"C:/Code/MonoGame/Snake/Content/gamefont.spritefont","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/gamefont.xnb","FontDescriptionProcessor","SpriteFontContent",414,70687,0,0318037
