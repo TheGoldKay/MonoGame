@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System.Text;
 
 
 namespace SnakeBody
@@ -69,7 +66,8 @@ namespace SnakeBody
 				}else if(head.X > this.monitor_width)
 				{
 					head.X = 0;
-				}else if(head.Y < 0)
+				}
+				if(head.Y < 0)
 				{
 					head.Y = this.monitor_height;
 				}else if(head.Y > this.monitor_height)
@@ -98,7 +96,7 @@ namespace SnakeBody
             {
                 this.dir = "right";
             }
-        }
+        } 
 		public void draw(SpriteBatch batch)
 		{
 			batch.Draw(this.head, this.body[0], Color.BurlyWood);

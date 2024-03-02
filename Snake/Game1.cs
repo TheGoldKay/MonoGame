@@ -15,7 +15,7 @@ namespace Snake
         SpriteFont font;
         Vector2 titlePos;
         int window_width = 800;
-        int window_height = 600;
+        int window_height = 500;
         Texture2D snakePart;
         Texture2D headPart;
         Vector2 headPos;
@@ -33,6 +33,7 @@ namespace Snake
             this.Window.IsBorderless = true;
             _graphics.PreferredBackBufferWidth = window_width;
             _graphics.PreferredBackBufferHeight = window_height;
+            _graphics.ApplyChanges();
             titlePos = new Vector2(window_width / 2 - 100, 10);
             base.Initialize();
         }
@@ -62,7 +63,6 @@ namespace Snake
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(font, "Snake Game", titlePos, Color.Pink);
-            //_spriteBatch.Draw(snakePart, headPos, Color.White);
             snake.draw(_spriteBatch);
             _spriteBatch.End();
             base.Draw(gameTime);
