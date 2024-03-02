@@ -1,9 +1,10 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Code/MonoGame/Snake/Content/Arial.spritefont","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/Arial.xnb","FontDescriptionProcessor","SpriteFontContent",2008,21535,0,1838011
-"C:/Code/MonoGame/Snake/Content/borders_rect.png","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/borders_rect.xnb","TextureProcessor","Texture2DContent",22506,3000085,0,0845978
-"C:/Code/MonoGame/Snake/Content/Drawing.png","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/Drawing.xnb","TextureProcessor","Texture2DContent",58829,6666325,0,1487914
-"C:/Code/MonoGame/Snake/Content/gamefont.spritefont","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/gamefont.xnb","FontDescriptionProcessor","SpriteFontContent",414,70687,0,0435801
-"C:/Code/MonoGame/Snake/Content/new_rect_2.png","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/new_rect_2.xnb","TextureProcessor","Texture2DContent",5883,1864485,0,0744063
-"C:/Code/MonoGame/Snake/Content/right_borders_2.png","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/right_borders_2.xnb","TextureProcessor","Texture2DContent",9474,1864485,0,0684956
-"C:/Code/MonoGame/Snake/Content/right_borders.png","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/right_borders.xnb","TextureProcessor","Texture2DContent",28840,2909761,0,0631424
-"C:/Code/MonoGame/Snake/Content/snake_part.png","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/snake_part.xnb","TextureProcessor","Texture2DContent",385,985,0,0030206
+"C:/Code/MonoGame/Snake/Content/../shead.png","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/shead.xnb","TextureProcessor","Texture2DContent",370,985,0,1277422
+"C:/Code/MonoGame/Snake/Content/Arial.spritefont","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/Arial.xnb","FontDescriptionProcessor","SpriteFontContent",2008,21535,0,1062265
+"C:/Code/MonoGame/Snake/Content/borders_rect.png","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/borders_rect.xnb","TextureProcessor","Texture2DContent",22506,3000085,0,0748107
+"C:/Code/MonoGame/Snake/Content/Drawing.png","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/Drawing.xnb","TextureProcessor","Texture2DContent",58829,6666325,0,1444577
+"C:/Code/MonoGame/Snake/Content/gamefont.spritefont","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/gamefont.xnb","FontDescriptionProcessor","SpriteFontContent",414,70687,0,052977
+"C:/Code/MonoGame/Snake/Content/new_rect_2.png","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/new_rect_2.xnb","TextureProcessor","Texture2DContent",5883,1864485,0,0556775
+"C:/Code/MonoGame/Snake/Content/right_borders_2.png","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/right_borders_2.xnb","TextureProcessor","Texture2DContent",9474,1864485,0,0474566
+"C:/Code/MonoGame/Snake/Content/right_borders.png","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/right_borders.xnb","TextureProcessor","Texture2DContent",28840,2909761,0,0658738
+"C:/Code/MonoGame/Snake/Content/snake_part.png","C:/Code/MonoGame/Snake/Content/bin/DesktopGL/snake_part.xnb","TextureProcessor","Texture2DContent",385,985,0,0018984

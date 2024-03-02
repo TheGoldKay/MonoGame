@@ -11,11 +11,13 @@ namespace Snake
         private SpriteBatch _spriteBatch;
         string fontName = "gamefont";
         string partName = "snake_part";
+        string headName = "shead";
         SpriteFont font;
         Vector2 titlePos;
         int window_width = 800;
         int window_height = 600;
         Texture2D snakePart;
+        Texture2D headPart;
         Vector2 headPos;
         MakeSnake snake;
 
@@ -40,15 +42,17 @@ namespace Snake
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>(fontName);
             snakePart = Content.Load<Texture2D>(partName);
+            headPart = Content.Load<Texture2D>(headName);
             headPos = new Vector2(window_width / 2, window_height / 2);
-            snake = new MakeSnake(snakePart, headPos);
+            snake = new MakeSnake(snakePart, headPart, headPos, window_width, window_height);
         }
 
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
+            float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            snake.update(dt);
             base.Update(gameTime);
         }
 

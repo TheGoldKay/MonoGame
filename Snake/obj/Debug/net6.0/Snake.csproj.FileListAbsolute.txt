@@ -32,3 +32,4 @@ C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\right_borders.xnb
 C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\right_borders_2.xnb
 C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\new_rect_2.xnb
 C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\snake_part.xnb
+C:\Code\MonoGame\Snake\bin\Debug\net6.0\Content\shead.xnb

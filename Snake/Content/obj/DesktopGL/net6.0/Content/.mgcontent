@@ -4,6 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Code/MonoGame/Snake/Content/../shead.png</File>
     <File>C:/Code/MonoGame/Snake/Content/Arial.spritefont</File>
     <File>C:/Code/MonoGame/Snake/Content/borders_rect.png</File>
     <File>C:/Code/MonoGame/Snake/Content/Drawing.png</File>
@@ -14,6 +15,7 @@
     <File>C:/Code/MonoGame/Snake/Content/snake_part.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>shead.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
