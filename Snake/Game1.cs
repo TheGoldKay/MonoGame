@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
+using SnakeBody;
 
 namespace Snake
 {
@@ -17,6 +17,7 @@ namespace Snake
         int window_height = 600;
         Texture2D snakePart;
         Vector2 headPos;
+        MakeSnake snake;
 
         public Game1()
         {
@@ -31,7 +32,6 @@ namespace Snake
             _graphics.PreferredBackBufferWidth = window_width;
             _graphics.PreferredBackBufferHeight = window_height;
             titlePos = new Vector2(window_width / 2 - 100, 10);
-            headPos = new Vector2(100, 100);
             base.Initialize();
         }
 
@@ -40,6 +40,8 @@ namespace Snake
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>(fontName);
             snakePart = Content.Load<Texture2D>(partName);
+            headPos = new Vector2(window_width / 2, window_height / 2);
+            snake = new MakeSnake(snakePart, headPos);
         }
 
         protected override void Update(GameTime gameTime)
@@ -56,7 +58,8 @@ namespace Snake
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(font, "Snake Game", titlePos, Color.Pink);
-            _spriteBatch.Draw(snakePart, headPos, Color.White);
+            //_spriteBatch.Draw(snakePart, headPos, Color.White);
+            snake.draw(_spriteBatch);
             _spriteBatch.End();
             base.Draw(gameTime);
         }
