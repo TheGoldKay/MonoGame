@@ -18,11 +18,14 @@ namespace SnakeBody
 		string dir;
 		int monitor_width;
 		int monitor_height;
-		public MakeSnake(Texture2D part, Texture2D head, Vector2 headPos, int mon_width, int mon_height)
+		Vector2 last;
+		int initial_length;
+		public MakeSnake(Texture2D part, Texture2D head, Vector2 headPos, int mon_width, int mon_height, int initial_length = 5)
 		{
 			this.part = part;
 			this.head = head;
 			this.size = part.Width;
+			this.initial_length = initial_length;
 			this.body = makeParts(headPos);
 			this.monitor_width = mon_width;
 			this.monitor_height = mon_height;
@@ -33,12 +36,24 @@ namespace SnakeBody
 		private List<Vector2> makeParts(Vector2 head)
 		{
 			List<Vector2> parts = new List<Vector2>();
-			for(int i = 0; i < 15; i++)
+			for(int i = 0; i < initial_length; i++)
 			{
 				Vector2 pos = new Vector2(head.X + this.size * i, head.Y);
 				parts.Add(pos);
 			}
 			return parts;
+		}
+		public Vector2 getHead()
+		{
+			return this.body[0];
+		}
+		public int getSize()
+		{
+			return this.size;
+		}
+		public void grow()
+		{
+			body.Add(last);
 		}
 		public void update(float dt)
 		{
@@ -75,6 +90,7 @@ namespace SnakeBody
 					head.Y = 0;
 				}
                 this.body.Insert(0, head);
+				last = this.body[^1];
                 this.body.RemoveAt(this.body.Count - 1);
 				this.clock = 0;
             }

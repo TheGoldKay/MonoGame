@@ -1,9 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using SnakeBody;
 using Food;
 
@@ -60,6 +57,11 @@ namespace Snake
                 Exit();
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
             snake.update(dt);
+            if(food.eaten(snake.getHead(), snake.getSize()))
+            {
+                food.placeFood(); 
+                snake.grow();
+            }
             base.Update(gameTime);
         }
 

@@ -1,10 +1,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using SnakeBody;
 using System;
 using Microsoft.Xna.Framework.Content;
 using System.Numerics;
@@ -15,10 +13,11 @@ namespace Food
     public class MakeFood
     {
         Texture2D food;
-        System.Numerics.Vector2 foodPos;
+        Microsoft.Xna.Framework.Vector2 foodPos;
         List<Texture2D> fruits;
         ContentManager content;
         int win_width, win_height;
+        int width, height;
         public MakeFood(ContentManager content, int win_width, int win_height)
         {
             this.content = content;
@@ -38,17 +37,25 @@ namespace Food
                 fruits.Add(fruit);
             }
         }
-        private void placeFood()
+        public void placeFood()
         {
             var index = new Random().Next(0, fruits.Count);
             food = fruits[index];            
             int x = new Random().Next(0, win_width - 30);
             int y = new Random().Next(0, win_height - 30);
-            foodPos = new System.Numerics.Vector2(x, y);
+            width = food.Width;
+            height = food.Height;
+            foodPos = new Microsoft.Xna.Framework.Vector2(x, y); 
         }
         public void draw(SpriteBatch batch)
         {
             batch.Draw(food, foodPos, Color.White);
+        }
+        public bool eaten(Microsoft.Xna.Framework.Vector2 headPos, int headSize)
+        {
+            var rect = new Rectangle((int)foodPos.X, (int)foodPos.Y, width, height);
+            var headRect = new Rectangle((int)headPos.X, (int)headPos.Y, headSize, headSize);
+            return headRect.Intersects(rect);
         }
     }
 }
