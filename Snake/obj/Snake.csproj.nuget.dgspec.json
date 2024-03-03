@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Code\\MonoGame\\Snake\\Snake.csproj": {}
+    "c:\\Code\\MonoGame\\Snake\\Snake.csproj": {}
   },
   "projects": {
-    "C:\\Code\\MonoGame\\Snake\\Snake.csproj": {
+    "c:\\Code\\MonoGame\\Snake\\Snake.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code\\MonoGame\\Snake\\Snake.csproj",
+        "projectUniqueName": "c:\\Code\\MonoGame\\Snake\\Snake.csproj",
         "projectName": "Snake",
-        "projectPath": "C:\\Code\\MonoGame\\Snake\\Snake.csproj",
+        "projectPath": "c:\\Code\\MonoGame\\Snake\\Snake.csproj",
         "packagesPath": "C:\\Users\\jhonn\\.nuget\\packages\\",
-        "outputPath": "C:\\Code\\MonoGame\\Snake\\obj\\",
+        "outputPath": "c:\\Code\\MonoGame\\Snake\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jhonn\\AppData\\Roaming\\NuGet\\NuGet.Config",

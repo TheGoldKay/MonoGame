@@ -1,7 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using SnakeBody;
+using System;
 
 namespace Snake
 {
@@ -20,6 +24,7 @@ namespace Snake
         Texture2D headPart;
         Vector2 headPos;
         MakeSnake snake;
+        List<Texture2D> fruits;
 
         public Game1()
         {
@@ -46,6 +51,19 @@ namespace Snake
             headPart = Content.Load<Texture2D>(headName);
             headPos = new Vector2(window_width / 2, window_height / 2);
             snake = new MakeSnake(snakePart, headPart, headPos, window_width, window_height);
+            //Texture2D apple = Content.Load<Texture2D>("Banana");
+            loadFruits();
+        }
+        private void loadFruits()
+        {
+            fruits = new List<Texture2D>();
+            var files = from file in Directory.EnumerateFiles(@"Content\FRUIT_LINE") select file;
+            foreach(var file in files)
+            {
+                var name = file.Split('\\').Last().Split('.').First();
+                var fruit = Content.Load<Texture2D>(@$"FRUIT_LINE\{name}");
+                fruits.Add(fruit);
+            }
         }
 
         protected override void Update(GameTime gameTime)
