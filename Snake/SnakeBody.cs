@@ -20,6 +20,7 @@ namespace SnakeBody
 		int monitor_height;
 		Vector2 last;
 		int initial_length;
+		public bool isDead = false;
 		public MakeSnake(Texture2D part, Texture2D head, Vector2 headPos, int mon_width, int mon_height, int initial_length = 5)
 		{
 			this.part = part;
@@ -55,7 +56,27 @@ namespace SnakeBody
 		{
 			body.Add(last);
 		}
+		public void checkDeath()
+		{
+			var headRect = new Rectangle((int)this.body[0].X, (int)this.body[0].Y, this.size, this.size);
+			for(int i = 2; i < this.body.Count; i++)
+			{
+				var pos = this.body[i];
+				var bodyRect = new Rectangle((int)pos.X, (int)pos.Y, this.size, this.size);
+				if(headRect.Intersects(bodyRect))
+				{
+					isDead = true;
+				}
+			}
+		}
 		public void update(float dt)
+		{
+			if(!isDead)
+			{
+				move(dt);
+			}
+		}
+		public void move(float dt)
 		{
 			keypress();
 			this.clock += dt;
