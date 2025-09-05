@@ -1,0 +1,5 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/jhonn/Visual Studio/ShootingGallery/Content/crosshairs.png","C:/Users/jhonn/Visual Studio/ShootingGallery/Content/bin/Windows/crosshairs.xnb","TextureProcessor","Texture2DContent",1892,10085,0,1218448
+"C:/Users/jhonn/Visual Studio/ShootingGallery/Content/galleryFont.spritefont","C:/Users/jhonn/Visual Studio/ShootingGallery/Content/bin/Windows/galleryFont.xnb","FontDescriptionProcessor","SpriteFontContent",2065,70681,0,1030343
+"C:/Users/jhonn/Visual Studio/ShootingGallery/Content/sky.png","C:/Users/jhonn/Visual Studio/ShootingGallery/Content/bin/Windows/sky.xnb","TextureProcessor","Texture2DContent",1079607,9216085,0,2697676
+"C:/Users/jhonn/Visual Studio/ShootingGallery/Content/target.png","C:/Users/jhonn/Visual Studio/ShootingGallery/Content/bin/Windows/target.xnb","TextureProcessor","Texture2DContent",3395,32485,0,0067805
