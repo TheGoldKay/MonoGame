@@ -52,19 +52,35 @@ namespace ShootingGallery
             galleryFont = Content.Load<SpriteFont>("galleryFont");
         }
 
+        protected bool isHit(Vector2 mousePos, Vector2 targetPos, int targetRadius)
+        {
+            float dist = Vector2.Distance(mousePos, targetPos);
+            return dist <= targetRadius;
+        }
+
+        protected Vector2 setPos()
+        {
+            Random rand = new Random();
+            int x = rand.Next(0, winWidth - targetSprite.Width);
+            int y = rand.Next(0, winHeight - targetSprite.Height);
+            return new Vector2(x, y);
+        }
         protected override void Update(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
             // TODO: Add your update logic here
-            targetPos = getPos();
+            //targetPos = getPos();
             mState = Mouse.GetState();
             if (mState.LeftButton == ButtonState.Pressed && mRelease)
             {
-                Console.WriteLine("Pressed");
+                if (isHit(new Vector2(mState.X, mState.Y), targetPos + new Vector2(targetRadius, targetRadius), targetRadius))
+                {
+                    score++;
+                    targetPos = setPos();
+                }
                 mRelease = false;
-                score++;
             }
             if (mState.LeftButton == ButtonState.Released)
             {
@@ -103,8 +119,8 @@ namespace ShootingGallery
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
             _spriteBatch.Draw(backgroundSprite, new Vector2(0, 0), Color.White);
-            //_spriteBatch.Draw(targetSprite, targetPos, Color.White);
-            _spriteBatch.DrawString(galleryFont, "Score: ", new Vector2(0, 0), Color.Black);
+            _spriteBatch.Draw(targetSprite, targetPos, Color.White);
+            _spriteBatch.DrawString(galleryFont, "Score: " + score.ToString(), new Vector2(0, 0), Color.Black);
             _spriteBatch.End(); 
 
             base.Draw(gameTime);
